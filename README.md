@@ -18,7 +18,7 @@
 
 # Auto-updater
 
-Is not a requirement to use this module to compiled with the core, the SQL and DBC files enough on their own, if you wish to have auto-updater, you would need to add `mod-arac` under your AzerothCore's `modules`, you can read more on [official page](https://www.azerothcore.org/wiki/installing-a-module).
+It is not a requirement to compile this module with the core; the SQL and DBC files are enough on their own. If you wish to have the auto-updater, you would need to add `mod-arac` under your AzerothCore's `modules`. You can read more on the [official page](https://www.azerothcore.org/wiki/installing-a-module).
 
 # Need help?
 
