@@ -7812,10 +7812,10 @@ INSERT IGNORE INTO `playercreateinfo_spell_custom` VALUES
 
 -- quest_template
 
-UPDATE `quest_template` INNER JOIN `quest_template_addon` 
-	ON `quest_template_addon`.id = `quest_template`.id
-		SET AllowableRaces = 1791
-			WHERE `quest_template_addon`.allowableclasses != 0 AND AllowableRaces != 0;
+UPDATE `quest_template` INNER JOIN `quest_template_addon`
+	ON `quest_template_addon`.`id` = `quest_template`.`id`
+		SET `AllowableRaces` = 1791
+			WHERE `quest_template_addon`.`allowableclasses` != 0 AND `AllowableRaces` != 0;
 
 -- playercreateinfo_skills
 
@@ -7852,8 +7852,8 @@ SET @BloodElfWaterTotem := 30759;
 SET @BloodElfAirTotem := 30756;
 
 -- Human, Night Elf, Undead, Gnome and Blood Elf
-DELETE FROM player_totem_model WHERE RaceID IN (1,4,5,7,10);
-INSERT INTO player_totem_model (TotemID, RaceID, ModelID) VALUES 
+DELETE FROM `player_totem_model` WHERE `RaceID` IN (1,4,5,7,10);
+INSERT INTO `player_totem_model` (`TotemID`, `RaceID`, `ModelID`) VALUES 
 (1, 1, @HumanFireTotem),
 (2, 1, @HumanEarthTotem),
 (3, 1, @HumanWaterTotem),
