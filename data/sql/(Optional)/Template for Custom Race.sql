@@ -5,22 +5,22 @@ In this example, the code copies the information from RACE 1 (Human) to add it t
 
 */
 
-SELECT race + 11 INTO @race FROM `playercreateinfo` WHERE race = 1 LIMIT 1; -- @race 
+SELECT `race` + 11 INTO @race FROM `playercreateinfo` WHERE race = 1 LIMIT 1; -- @race
 
-SELECT racemask + 2047 INTO @raceMask FROM `playercreateinfo_spell_custom` WHERE racemask = 1 LIMIT 1; -- @raceMask
+SELECT `racemask` + 2047 INTO @raceMask FROM `playercreateinfo_spell_custom` WHERE racemask = 1 LIMIT 1; -- @raceMask
 
-SELECT class + 11 INTO @class FROM `player_class_stats` WHERE Class = 1 LIMIT 1; -- @class
+SELECT `class` + 11 INTO @class FROM `player_class_stats` WHERE Class = 1 LIMIT 1; -- @class
 
 -- PlayerCreateInfo
 REPLACE INTO `playercreateinfo`
 	SELECT @race, class, map, zone, position_x, position_y, position_z, orientation FROM `playercreateinfo` WHERE race = 1;
 
 -- Player_Race_Stats
-REPLACE INTO `player_race_stats` (`Race`, `Strength`, `Agility`, `Stamina`, `Intellect`, `Spirit`) 
+REPLACE INTO `player_race_stats` (`Race`, `Strength`, `Agility`, `Stamina`, `Intellect`, `Spirit`)
 	SELECT @race, Strength, Agility, Stamina, Intellect, Spirit FROM `player_race_stats` WHERE race = 1;
-	
+
 -- Player_Class_Stats
-REPLACE INTO `player_class_stats` (`Class`, `Level`, `BaseHP`, `BaseMana`, `Strength`, `Agility`, `Stamina`, `Intellect`, `Spirit`) 
+REPLACE INTO `player_class_stats` (`Class`, `Level`, `BaseHP`, `BaseMana`, `Strength`, `Agility`, `Stamina`, `Intellect`, `Spirit`)
 	SELECT @class, Level, BaseHP, BaseMana, Strength, Agility, Stamina, Intellect, Spirit FROM `player_class_stats` WHERE Class = 1;
 
 -- PlayerCreateInfo_Action

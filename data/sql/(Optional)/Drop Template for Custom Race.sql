@@ -1,13 +1,15 @@
 /*
 
-It's assumed you haven't changed the race, racemask or class "Copy for Custom Race.sql" so this will aim to delete:
+It's assumed you haven't changed the race, racemask or class
+"Template for Custom Race.sql" so this will aim to delete:
+
 Race = 12
 RaceMask = 2048
 Class = 12
 
 */
 
-SELECT race + 11 INTO @race FROM `playercreateinfo` WHERE race = 1 LIMIT 1; -- @race 
+SELECT race + 11 INTO @race FROM `playercreateinfo` WHERE race = 1 LIMIT 1; -- @race
 
 SELECT racemask + 2047 INTO @raceMask FROM `playercreateinfo_spell_custom` WHERE racemask = 1 LIMIT 1; -- @raceMask
 
