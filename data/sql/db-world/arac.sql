@@ -7819,6 +7819,7 @@ UPDATE `quest_template` INNER JOIN `quest_template_addon`
 
 -- playercreateinfo_skills
 
+-- Bows, Guns, Two-Handed Maces, Daggers and Crossbows (to all Races)
 UPDATE `playercreateinfo_skills`
 	SET `raceMask` = 0
 		WHERE `skill` IN (45, 46, 160, 173, 226) AND `classMask` != 0;
